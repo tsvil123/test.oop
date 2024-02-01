@@ -1,3 +1,22 @@
 a = int(input())
 print((1 + 1 / a)**a)
 
+def reverse(a):
+    s = 0
+    while a // 10 > 0:
+        b = a % 10
+        s = s + b * 10 ** (len(str(a)) - 1)
+        a = a // 10
+    else:
+        s = s + a
+    return s
+def pal(a):
+    if a == reverse(a) and a % 6 == 0:
+        return 1
+    else:
+        return 0
+m = 0
+for i in range(1000, 50001):
+    if pal(i):
+        m = m + 1
+print(m)
